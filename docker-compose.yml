@@ -1,0 +1,9 @@
+version: '3.1'
+services:
+  websocket:
+    build: .
+    restart: always
+    ports:
+      - 8001:8000
+    volumes: # No volume pode ser redefinido o index.php para costumizações
+      - ./www:/var/www/html
