@@ -4,7 +4,7 @@ use Swoole\Websocket\Frame;
 use Swoole\Websocket\Server;
 
 
-$server = new Server("0.0.0.0", 8000);
+$server = new Server("0.0.0.0", 80);
 /*
 $server->on('open', function($server, $req) {
     echo "connection open: {$req->fd}\n";
@@ -19,7 +19,7 @@ $server->on('message', function($server, $frame) {
 
                 $server->push($conexao, json_encode(['type' => 'chat', 'text' => $frame->data]));
         }
-    $server->push($frame->fd, json_encode(["connect", "Swoole-websocket-php"]));
+   // $server->push($frame->fd, json_encode(["connect", "Swoole-websocket-php"]));
 });
 /*
 $server->on('close', function($server, $fd) {
